@@ -1,11 +1,31 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> Primer proyecto (grupo 2)</title>
 </head> 
 <body> 
+<h1>Grupo 2</h1>
+    <div>
+        <p1>1) Se debe agregar un propiedad a un objeto, La entrada trae el nombre de la key y el value separado por coma.</p1>
+        <br>
+        <br>
+        <input type="text" name="input1" id="texto1">
+        <button type="button" onclick="imprimir()">Mostrar</button>
+    </div>
+</body>    
 
-
-
-</body>
-</html>
+<script>
+    
+function imprimir(){
+    
+    window.demoObject = {};
+    //var texto = document.getElementById("texto").value;
+    var texto = window.document.getElementById("texto1").value;
+    var texto_separado = texto.split(',');
+    var tamano = texto_separado.length;
+    
+    demoObject[texto_separado[0]] = texto_separado[1];
+    console.log(demoObject);
+} 
+</script>
