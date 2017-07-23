@@ -12,7 +12,22 @@
         <br>
         <input type="text" name="input1" id="texto1">
         <button type="button" onclick="imprimir()">Mostrar</button>
+        
     </div>
+
+    <br>
+    <br>
+
+    <div>
+
+    <p1>3) Dado un numero imprimir su FizzBuzz correspondiente. </p1>
+        <br>
+        <br>
+        <p1> Ingrese el numero. </p1>
+        <input type="text" name="input1" id="texto3">
+        <button type="button" onclick="FizzBuzz()">Imprimir</button> 
+
+     </div>   
 </body>    
 
 <script>
@@ -26,4 +41,24 @@ function imprimir(){
     demoObject[texto_separado[0]] = texto_separado[1];
     console.log(demoObject);
 } 
+
+
+function FizzBuzz(){
+    
+    var numero = document.getElementById("texto3").value;  
+    
+    if ((numero % 3 === 0) && (numero % 5 === 0)){
+        console.log("FIZZ BUZZ");
+    }
+    else if(numero % 3 === 0){
+        console.log("FIZZ");   
+    }
+    else if(numero % 5 === 0){
+        console.log("BUZZ"); 
+    }
+    else{
+        console.log(numero);
+    }
+
+}
 </script>
