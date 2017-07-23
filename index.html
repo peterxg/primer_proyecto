@@ -20,10 +20,8 @@
 function imprimir(){
     
     window.demoObject = {};
-    //var texto = document.getElementById("texto").value;
-    var texto = window.document.getElementById("texto1").value;
+    var texto = document.getElementById("texto1").value;
     var texto_separado = texto.split(',');
-    var tamano = texto_separado.length;
     
     demoObject[texto_separado[0]] = texto_separado[1];
     console.log(demoObject);
