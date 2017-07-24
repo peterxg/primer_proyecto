@@ -37,6 +37,22 @@
         <button type="button" onclick="FizzBuzz()">Imprimir</button>
 
      </div>
+     <br>
+     <br>
+
+<div>
+     
+       <p1>4). </p1>
+         <br>
+         <br>
+         <input type="text" name="input4" id="texto4">
+         <button type="button" onclick="highorder()">Mostrar</button>
+         <br><br>
+         <p1>entrada para la funcion map</p1>
+         <br>
+         <input type="text" name="input5" id="texto5">
+     </div>
+
 </body>
 
 <script>
@@ -78,6 +94,48 @@ function convertir(){
     var jsonObject = JSON.parse(contenido);
     console.log(jsonObject);
 }
+
+
+ function mayor(arreglo){
+        return arreglo >= 20;
+       
+    }
+function highorder(){
+    var aux = window.document.getElementById("texto4").value;
+    window.arreglo = aux.split(",").map(Number);
+    var incremento = window.document.getElementById("texto5").value;
+    
+    
+    function mayor(arreglo){
+        return arreglo >= 20;
+       
+    };
+    
+   
+
+    //map    
+    var resultadoMap = arreglo.map(function(dato) {
+       return (dato + incremento);
+    });
+
+    console.log("imprimir resultado de la funcion map"+resultadoMap);
+
+    //reduce
+
+    var resultadoReduce = arreglo.reduce(function(sum, value) {
+      return sum + value;
+
+    }, incremento);
+
+    console.log(typeof(window.arreglo));
+
+    console.log("imprimir resultado funcion Reduce"+resultadoReduce);
+
+   
+    console.log("resultado de la funcion some"+window.arreglo.some(mayor));
+}
+
+
 
 </script>
 
