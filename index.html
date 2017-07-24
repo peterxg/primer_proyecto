@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> Primer proyecto ( grupo 2)</title>
-</head> 
-<body> 
+</head>
+<body>
 <h1>Grupo 2</h1>
     <div>
         <p1>1) Se debe agregar un propiedad a un objeto, La entrada trae el nombre de la key y el value separado por coma.</p1>
@@ -12,11 +12,20 @@
         <br>
         <input type="text" name="input1" id="texto1">
         <button type="button" onclick="imprimir()">Mostrar</button>
-        
+
     </div>
 
     <br>
     <br>
+    <div>
+            <p1>2) Dado un JSON imprimir su representación a objeto </p1>
+            <br>
+            <br>
+            <input type="text" name="input2" id="texto2" size="30">
+            <button type="button" onclick="convertir()">Mostrar</button>
+        </div>
+<br>
+<br>
 
     <div>
 
@@ -25,40 +34,51 @@
         <br>
         <p1> Ingrese el numero. </p1>
         <input type="text" name="input1" id="texto3">
-        <button type="button" onclick="FizzBuzz()">Imprimir</button> 
+        <button type="button" onclick="FizzBuzz()">Imprimir</button>
 
-     </div>   
-</body>    
+     </div>
+</body>
 
 <script>
-    
+
 function imprimir(){
-    
+
     window.demoObject = {};
     var texto = document.getElementById("texto1").value;
     var texto_separado = texto.split(',');
-    
+
     demoObject[texto_separado[0]] = texto_separado[1];
     console.log(demoObject);
-} 
+}
 
 
 function FizzBuzz(){
-    
-    var numero = document.getElementById("texto3").value;  
-    
+
+    var numero = document.getElementById("texto3").value;
+
     if ((numero % 3 === 0) && (numero % 5 === 0)){
         console.log("FIZZ BUZZ");
     }
     else if(numero % 3 === 0){
-        console.log("FIZZ");   
+        console.log("FIZZ");
     }
     else if(numero % 5 === 0){
-        console.log("BUZZ"); 
+        console.log("BUZZ");
     }
     else{
         console.log(numero);
     }
 
 }
+
+
+function convertir(){
+
+  var contenido = document.getElementById("texto2").value;
+    var jsonObject = JSON.parse(contenido);
+    console.log(jsonObject);
+}
+
 </script>
+
+</html>
