@@ -1,11 +1,156 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> Primer proyecto (grupo 2)</title>
 </head> 
 <body> 
-
-
-
+<h1>Grupo 2</h1>
+    <div>
+        <p1>1) Se debe agregar un propiedad a un objeto, La entrada trae el nombre de la key y el value separado por coma.</p1>
+        <br>
+        <br>
+        <input type="text" name="input1" id="texto1">
+        <button type="button" onclick="imprimir()">Mostrar</button>
+    </div>
+    
+    <br>
+    <br>
+    
+    <div>
+        <p1>2) Dado un JSON imprimir su representación a objeto </p1>
+        <br>
+        <br>
+        <input type="text" name="input2" id="texto2" size="30">
+        <button type="button" onclick="convertir()">Mostrar</button>
+    </div>
+    
+    <br>
+    <br>
+    
+    <div>
+        <p1>3) Dado un número imprimir su FizzBuzz correspondiente. </p1>
+        <br>
+        <br>
+        <input type="text" name="input3" id="texto3">
+        <button type="button" onclick="FizzBuzz()">Mostrar</button>   
+    </div>
+    
+    <br>
+    <br>
+    
+    <div>
+        <p1>4). </p1>
+        <br>
+        <br>
+        <input type="text" name="input4" id="texto4">
+        <button type="button" onclick="highorder()">Mostrar</button>
+        <br><br>
+        <p1>entrada para la funcion map</p1>
+        <br>
+        <input type="text" name="input5" id="texto5">
+    </div>
+    
+    
 </body>
+
+<script>
+    
+function imprimir(){
+    
+    window.demoObject = {};
+    var texto = document.getElementById("texto1").value;
+    var texto_separado = texto.split(',');
+    
+    
+    window.demoObject[texto_separado[0]] = texto_separado[1];
+    console.log(demoObject);
+} 
+    
+function convertir(){
+    
+    var contenido = document.getElementById("texto2").value;
+    var jsonObject = JSON.parse(contenido);
+    console.log(jsonObject);
+} 
+    
+function FizzBuzz(){
+    
+    var numero = document.getElementById("texto3").value;  
+    
+    if ((numero % 3 === 0) && (numero % 5 === 0)){
+        console.log("FIZZ BUZZ");
+    }
+    else if((numero % 3 === 0) && (numero % 5 != 0)){
+        console.log("FIZZ");   
+    }
+    else if((numero % 5 === 0) && (numero % 3 != 0)){
+        console.log("BUZZ"); 
+    }
+    else{
+        console.log(numero);
+    }  
+}
+    
+function highorder(){
+    var aux = window.document.getElementById("texto4").value;
+    window.arreglo = aux.split(",").map(Number);
+    var incremento = window.document.getElementById("texto5").value;
+    
+    
+    function mayor(arreglo){
+        return arreglo >= 20;
+       
+    };
+    
+    //funcion every
+    if(window.arreglo.every(mayor)){
+        console.log("(every) los numeros del arreglo son mayores a 20");
+       }
+    else{
+        console.log("(every) ningun numero es mayor a 20");
+    }
+    
+    //funcion filter
+    console.log("(filter) valores mayores a 20 son:" + window.arreglo.filter(mayor));
+    
+    
+    //funcion find
+    console.log("(find) el primer valor que cumple la condicion >20 es:" + arreglo.find(mayor));
+    
+    //funcion forEach
+    arreglo.forEach(function(inp){
+       console.log("imprimir cada posicion del arreglo: " + inp); 
+
+    });
+
+    //map    
+    var resultadoMap = arreglo.map(function(dato) {
+       return (dato * incremento);
+    });
+
+    console.log("imprimir resultado de la funcion map"+resultadoMap);
+
+    //reduce
+
+    var resultadoReduce = [1,2,3,4].reduce(function(sum, value) {
+      return sum + value;
+
+    }, 5);
+
+    console.log(typeof(arreglo));
+
+    console.log("imprimir resultado funcion Reduce"+resultadoReduce);
+
+    //some
+    /*
+    function isBiggerThan10(element, index, array) {
+      return maelement > 10;
+    }
+    */
+    console.log("resultado de la funcion some"+arreglo.some(mayor));
+}
+
+</script>
+
 </html>
