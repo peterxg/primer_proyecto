@@ -27,7 +27,23 @@
         <input type="text" name="input1" id="texto3">
         <button type="button" onclick="FizzBuzz()">Imprimir</button> 
 
-     </div>   
+     </div>
+    
+     <br>
+     <br>
+
+     <div>
+      <p1>4). </p1>
+        <br>
+        <br>
+        <input type="text" name="input4" id="texto4">
+        <button type="button" onclick="highorder()">Mostrar</button>
+        <br><br>
+        <p1>entrada para la funcion map</p1>
+        <br>
+        <input type="text" name="input5" id="texto5">
+    </div>
+    
 </body>    
 
 <script>
@@ -58,4 +74,37 @@ function FizzBuzz(){
         console.log(numero);
     }
 }
+    
+function highorder(){
+    var aux = window.document.getElementById("texto4").value;
+    window.arreglo = aux.split(",").map(Number);
+    var incremento = window.document.getElementById("texto5").value;
+    
+    
+    function mayor(arreglo){
+        return arreglo >= 20;
+       
+    };
+    
+    //funcion every
+    if(window.arreglo.every(mayor)){
+        console.log("(every) los numeros del arreglo son mayores a 20");
+       }
+    else{
+        console.log("(every) ningun numero es mayor a 20");
+    }
+    
+    //funcion filter
+    console.log("(filter) valores mayores a 20 son:" + window.arreglo.filter(mayor));
+    
+    
+    //funcion find
+    console.log("(find) el primer valor que cumple la condicion >20 es:" + arreglo.find(mayor));
+    
+    //funcion forEach
+    arreglo.forEach(function(inp){
+       console.log("imprimir cada posicion del arreglo: " + inp); 
+
+    });
+
 </script>
